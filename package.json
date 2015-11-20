@@ -1,0 +1,36 @@
+{
+  "name": "aws-lambda-deploy",
+  "version": "0.0.1",
+  "description": "Deploy AWS Lambda functions by first uploading them to S3",
+  "main": "aws-lambda-deploy.js",
+  "bin": {
+    "lambda-deploy": "aws-lambda-deploy.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriaan-pelzer/aws-lambda-deploy.git"
+  },
+  "keywords": [
+    "AWS",
+    "Lambda",
+    "deploy"
+  ],
+  "author": "Adriaan Pelzer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriaan-pelzer/aws-lambda-deploy/issues"
+  },
+  "homepage": "https://github.com/adriaan-pelzer/aws-lambda-deploy#readme",
+  "dependencies": {
+    "aws-sdk": "^2.2.18",
+    "fs": "0.0.2",
+    "highland": "^2.5.1",
+    "highland-wrapcallback": "0.0.1",
+    "inspect-log": "0.0.3",
+    "ramda": "^0.18.0"
+  },
+  "devDependencies": {}
+}
