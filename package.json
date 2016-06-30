@@ -1,29 +1,29 @@
 {
-  "name": "aws-lambda-deploy",
+  "name": "aws-elasticbeanstalk-deploy",
   "version": "0.0.1",
-  "description": "Deploy AWS Lambda functions by first uploading them to S3",
-  "main": "aws-lambda-deploy.js",
+  "description": "Deploy AWS elasticbeanstalk environments by first uploading them to S3",
+  "main": "aws-elasticbeanstalk-deploy.js",
   "bin": {
-    "lambda-deploy": "aws-lambda-deploy.js"
+    "elasticbeanstalk-deploy": "aws-elasticbeanstalk-deploy.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adriaan-pelzer/aws-lambda-deploy.git"
+    "url": "git+https://github.com/adriaan-pelzer/aws-elasticbeanstalk-deploy.git"
   },
   "keywords": [
     "AWS",
-    "Lambda",
+    "ElasticBeanstalk",
     "deploy"
   ],
   "author": "Adriaan Pelzer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adriaan-pelzer/aws-lambda-deploy/issues"
+    "url": "https://github.com/adriaan-pelzer/aws-elasticbeanstalk-deploy/issues"
   },
-  "homepage": "https://github.com/adriaan-pelzer/aws-lambda-deploy#readme",
+  "homepage": "https://github.com/adriaan-pelzer/aws-elasticbeanstalk-deploy#readme",
   "dependencies": {
     "aws-sdk": "^2.2.18",
     "fs": "0.0.2",
