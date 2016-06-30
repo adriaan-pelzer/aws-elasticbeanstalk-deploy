@@ -48,6 +48,16 @@ H ( [ process.argv[2] ] )
                 I ( data );
                 return {
                     ApplicationName: process.argv[3],
+                    VersionLabels: [
+                        process.argv[6]
+                    ]
+                };
+            } )
+            .flatMap ( W ( E, 'describeApplicationVersions' ) )
+            .map ( function ( data ) {
+                I ( data );
+                return {
+                    ApplicationName: process.argv[3],
                     EnvironmentName: process.argv[4],
                     VersionLabel: process.argv[6]
                 };
