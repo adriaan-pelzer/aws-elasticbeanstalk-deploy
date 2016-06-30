@@ -53,6 +53,7 @@ H ( [ process.argv[2] ] )
                     ]
                 };
             } )
+            .doto ( I )
             .flatMap ( W ( E, 'describeApplicationVersions' ) )
             .map ( function ( data ) {
                 I ( data );
