@@ -44,17 +44,35 @@ H ( [ process.argv[2] ] )
                 };
             } )
             .flatMap ( W ( E, 'createApplicationVersion' ) )
-            .map ( function ( data ) {
+            .flatMap ( function ( data ) {
                 I ( data );
-                return {
-                    ApplicationName: process.argv[3],
-                    VersionLabels: [
-                        process.argv[6]
-                    ]
+
+                var tryApplicationVersion = function () {
+                    return function ( push, next ) {
+                        W ( E, 'describeApplicationVersions' )( {
+                            ApplicationName: process.argv[3],
+                            VersionLabels: [
+                                process.argv[6]
+                            ]
+                        } )
+                            .errors ( function ( error ) {
+                                push ( error );
+                            } )
+                            .each ( function ( response ) {
+                                if ( response.ApplicationVersions[0].Status === 'PROCESSING' ) {
+                                    return setTimeout ( function () {
+                                        next ( H ( tryApplicationVersion () ) );
+                                    }, 5000 );
+                                }
+
+                                push ( null, response );
+                                push ( null, H.nil );
+                            } );
+                    };
                 };
+
+                return H ( tryApplicationVersion () );
             } )
-            .doto ( I )
-            .flatMap ( W ( E, 'describeApplicationVersions' ) )
             .map ( function ( data ) {
                 I ( data );
                 return {
