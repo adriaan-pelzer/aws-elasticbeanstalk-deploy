@@ -26,7 +26,6 @@
   "homepage": "https://github.com/adriaan-pelzer/aws-elasticbeanstalk-deploy#readme",
   "dependencies": {
     "aws-sdk": "^2.2.18",
-    "fs": "0.0.2",
     "highland": "^2.5.1",
     "highland-wrapcallback": "0.0.1",
     "inspect-log": "0.0.3",
